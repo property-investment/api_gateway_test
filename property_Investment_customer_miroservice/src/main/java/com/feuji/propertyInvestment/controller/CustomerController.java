@@ -20,6 +20,7 @@ import com.feuji.propertyInvestment.serviceImplementation.CustomerServiceImpl;
 import com.feuji.propertyinvestment.entity.Customer;
 
 @RestController
+//added sucess fully
 @RequestMapping("/customer")
 public class CustomerController {
 
