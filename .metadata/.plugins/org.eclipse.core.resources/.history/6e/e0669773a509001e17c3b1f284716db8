@@ -1,0 +1,36 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+ 
+  cloud:
+    gateway:
+      routes:
+      - id: property_Investment_customer_miroservice
+        uri: 
+          lb://property_Investment_customer_miroservice
+        predicates:
+        - Path=/customer/**
+        
+      - id: order-service
+        uri: 
+          lb://order-service
+        predicates:
+        - Path=/api/order/**
+        
+      - id: property_Investment_property_miroservice
+        uri: 
+          lb://property_Investment_property_miroservice
+        predicates:
+        - Path=/property/**
+       
+      - id: propertyinvestment_admin_microservice
+        uri: 
+          lb://propertyinvestment_admin_microservice
+        predicates:
+        - Path=/admin/**
+        
+      
+      

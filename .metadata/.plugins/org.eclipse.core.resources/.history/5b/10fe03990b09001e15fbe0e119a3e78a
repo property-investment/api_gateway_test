@@ -1,0 +1,24 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+ 
+  cloud:
+    gateway:
+      routes:
+      - id: address-service
+        uri: 
+          lb://address-service 
+        predicates:
+        - Path=/address-service/**
+        
+      - id: employee-service
+        uri: 
+          lb://employee-service 
+        predicates:
+        - Path=/emp/**
+        
+      
+      
